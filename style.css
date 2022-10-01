@@ -3,6 +3,7 @@
 body {
   font-family: "Lato", sans-serif;
   color: #6b1a22;
+  width: fit-content;
 }
 
 h2 {
@@ -33,7 +34,6 @@ section.alternate-background {
 
 main img {
   width: 100%;
-  height: 215px;
 }
 
 /* ---  Groups & Items --- */
@@ -41,6 +41,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .item {
@@ -51,36 +52,42 @@ main img {
 .item-double {
   flex: 2;
 }
-.row{
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-}
+
 /* -------  Navigation ------- */
 
 header {
   background-color: #83092e;
-  padding: 20px 20px 0 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
   font-family: "Tangerine", cursive;
   font-size: 72px;
   color: #ecdbc9;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  padding-right: 18px;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul {
   display: flex;
+  padding-left: 0;
   list-style-type: none;
-  padding-bottom: 10px;
-  justify-content: center;
 }
 
 header nav ul li a {
   color: #ecdbc9;
   text-decoration: none;
-  padding: 0 20px 0px 0;
+  padding: 0 20px 0 0;
+  user-select: none;
 }
 
 header nav ul li a:hover {
@@ -91,18 +98,24 @@ header nav ul li a:hover {
 /* -------  Join Form ------- */
 form {
   border: 2px solid #6b1a22;
-  display: flex;
-  flex-flow: column nowrap;
   padding: 10px;
+}
+
+form ul {
+  padding: 0px;
+}
+
+form li {
+  display: flex;
 }
 
 form label {
   font-weight: bold;
+  flex: 1;
 }
 
 form select,
 form input {
-  justify-self: flex-end;
   margin-bottom: 20px;
   width: 180px;
 }
@@ -129,31 +142,21 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 545px) {
-header .group{
+/*Breakpoint for navbar at 480*/
+@media all and (min-width: 480px) {
+  header {
+    flex-direction: row;
     justify-content: space-between;
+    padding: 10px;
   }
-  .logo{
+  .logo {
     font-size: 48px;
-    text-align: left;
+    justify-content: flex-start;
   }
-  #join img{
-    height: 450px;
-    width: 100%;
-  }
-
-  #download img{
-    height: 450px;
-  }
-
-  .group{
-    align-items: center;
-    flex-flow: row wrap;
-  }
-
-  #blog .group img{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+}
+/*Breakpoint for desktop at 800 to ensure that tablet view maintains the vertical flow*/
+@media all and (min-width: 800px) {
+  .group {
+    flex-direction: row;
   }
 }
