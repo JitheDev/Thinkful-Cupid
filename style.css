@@ -129,8 +129,8 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px) {
-  header .group{
+@media all and (min-width: 545px) {
+header .group{
     justify-content: space-between;
   }
   .logo{
@@ -145,12 +145,15 @@ footer p {
   #download img{
     height: 450px;
   }
+
   .group{
     align-items: center;
     flex-flow: row wrap;
   }
-  #blog .group img{
-    height: 300px;
-  }
 
+  #blog .group img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
